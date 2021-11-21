@@ -1,2 +1,2 @@
 # Construction-manager
-sending message according to progress and environment
+This program sends messages according to construction progress and surrounding environment.
