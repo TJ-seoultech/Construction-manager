@@ -3,8 +3,14 @@ import urllib.request
 import re
 import team_if_work
 
-title_lit = ["1.토공사", "2.기초공사", "3.골조공사", "4.조적공사", "5.미장공사", "6.방수공사", "7.지붕공사", "8.창호공사", "9.도장공사"]
+title_list = ["1.토공사", "2.기초공사", "3.골조공사", "4.조적공사", "5.미장공사", "6.방수공사", "7.지붕공사", "8.창호공사", "9.도장공사"]
+
+print("-"*20, "공종 선택", "-"*20)
+for title in title_list:
+    print(title)
+
 type = map(int, input("수행하는 공종을 선택해주세요. >>> ").split())
+
 
 
 print(' -오늘의 날씨-')
@@ -23,6 +29,7 @@ new_hum2 = int(re.sub(r"[^a-zA-Z0-9]", "", rain))
 print('--> 날씨 : ', temperature)
 print('--> 습도 : ',  hum)
 print('--> 강수확률 : ', rain)
+print("\n")
 
 for num in type:
     team_if_work.work_instruction(num)
