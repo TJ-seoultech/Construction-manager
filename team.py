@@ -1,19 +1,10 @@
 from bs4 import BeautifulSoup
 import urllib.request
 import re
+import team_if_work
 
 title_lit = ["1.토공사", "2.기초공사", "3.골조공사", "4.조적공사", "5.미장공사", "6.방수공사", "7.지붕공사", "8.창호공사", "9.도장공사"]
 type = map(int, input("수행하는 공종을 선택해주세요. >>> ").split())
-
-
-def water_proof(tem, hum, rain):
-    if new_tem > 10:
-        print("방수공사 하기 적합한 환경입니다.")
-
-
-def paint(tem, hum, rain):
-    if new_tem < 15:
-        print("도장공사 하기 적합한 환경입니다.")
 
 
 print(' -오늘의 날씨-')
@@ -34,10 +25,23 @@ print('--> 습도 : ',  hum)
 print('--> 강수확률 : ', rain)
 
 for num in type:
+    team_if_work.work_instruction(num)
+    print("-"*50)
+    #
+    # if num == 9:
+    #     paint(new_tem, new_hum1, new_hum2)
+    #
+    # elif num == 6:
+    #     water_proof(new_tem, new_hum1, new_hum2)
+    #
 
-    if num == 9:
-        paint(new_tem, new_hum1, new_hum2)
+'''
+def water_proof(tem, hum, rain):
+    if new_tem > 10:
+        print("방수공사 하기 적합한 환경입니다.")
 
-    elif num == 6:
-        water_proof(new_tem, new_hum1, new_hum2)
 
+def paint(tem, hum, rain):
+    if new_tem < 15:
+        print("도장공사 하기 적합한 환경입니다.")
+'''
